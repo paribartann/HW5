@@ -7,6 +7,8 @@ import "../css/addForm.css";
 let AddForm = ({ dispatch }) => {
   let name, category, price, inStock;
 
+ 
+
   return (
     <div id="formContainer">
       <h3>Please add the details</h3>
@@ -64,7 +66,6 @@ let AddForm = ({ dispatch }) => {
             name="InStock"
             value="true"
             onChange={ () => inStock = true}
-            checked
           />
           <label> Yes </label>
 
