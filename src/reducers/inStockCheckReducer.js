@@ -1,7 +1,7 @@
 import { SHOW_INSTOCK } from '../actions/action_types';
 
 const initialState = {
-   inStockOnly: false
+   inStockOnly: true
 }
 
 export default function(state = initialState, action) {

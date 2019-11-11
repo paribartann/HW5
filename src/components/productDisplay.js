@@ -14,22 +14,23 @@ class ProductDisplay extends Component {
     let lastCategory = null;
 
     const prod_array = this.props.add.sort((a,b) => (a.category > b.category) ? 1: -1)
-    prod_array.forEach(product => {
+    console.log("PROD_ARRAY",prod_array);
+    prod_array.forEach( (product, index )=> {
       if (product.name.indexOf(filterText) === -1) {
         return;
       }
-      if (inStockOnly && !product.stocked) {
+      if (!inStockOnly && !product.stocked) {
         return;
       }
       if (product.category !== lastCategory) {
         rows.push(
           <ProductCategoryRow
             category={product.category}
-            key={product.category}
+            key={index}
           />
         );
       }
-      rows.push(<ProductRow product={product} key={product.name} />);
+      rows.push(<ProductRow product={product} key={Math.random()} />);
       lastCategory = product.category;
     });
 

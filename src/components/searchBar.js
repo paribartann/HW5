@@ -12,7 +12,6 @@ let Searchbar = ({ dispatch }) => {
           <input
             type="text"
             placeholder="Search..."
-            // value={this.props.search.filterText}
             onChange={e => {
               e.preventDefault();
               dispatch(searchProduct(e.target.value));
